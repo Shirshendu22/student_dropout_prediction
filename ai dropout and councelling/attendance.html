@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Attendance Zone - RSM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <div><a href="index.html">Dashboard</a></div>
+    <div>
+      <a href="students.html">Students Academic Zone</a>
+      <a href="attendance.html">Attendance Zone</a>
+    </div>
+  </div>
+
+  <header>
+    <img src="logo.png" class="logo" alt="Institute Logo">
+    <div class="institute-name">
+      <h2>Institute of Management and Technology RSM</h2>
+      <p>Attendance & Dropout Risk Zone</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <h3>Attendance & Risk Analysis (All students)</h3>
+
+    <label for="showYear"><b>Filter year (optional)</b></label>
+    <select id="showYear" onchange="refreshAttendance()">
+      <option value="">All</option>
+      <option value="1">1st Year</option>
+      <option value="2">2nd Year</option>
+      <option value="3">3rd Year</option>
+      <option value="4">4th Year</option>
+    </select>
+
+    <table id="attendanceTable" style="margin-top:15px;">
+      <tr>
+        <th>S/N</th>
+        <th>Name</th>
+        <th>Roll</th>
+        <th>Year</th>
+        <th>Dept</th>
+        <th>Attendance %</th>
+        <th>Marks</th>
+        <th>Fee</th>
+        <th>Risk</th>
+        <th>Counseling</th>
+      </tr>
+    </table>
+    <p style="margin-top:10px;font-size:13px;color:#333;">(Counsel -> auto-generates a message and simulates sending SMS to guardian)</p>
+  </div>
+
+  <footer>
+    <div>
+      Institute of Management and Technology RSM<br>
+      24th VIP Jassore Road, Bidhannagar, Kolkata 700052
+    </div>
+    <div>Contact: 8976583431</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

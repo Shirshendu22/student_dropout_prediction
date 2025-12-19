@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>RSM - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <div><a href="index.html">Dashboard</a></div>
+    <div>
+      <a href="students.html">Students Academic Zone</a>
+      <a href="attendance.html">Attendance Zone</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <select id="languageSelect" onchange="translatePage()">
+        <option value="en">English</option>
+        <option value="rajasthani">Rajasthani Hindi</option>
+      </select>
+      <button onclick="toggleMode()" class="mode-toggle">🌓</button>
+    </div>
+  </div>
+
+  <header>
+    <img src="logo.png" class="logo" alt="Institute Logo">
+    <div class="institute-name">
+      <h2 id="title">Institute of Management and Technology RSM</h2>
+      <p id="subtitle">AI Dropout Prediction & Counseling System</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <h3 id="howToUseTitle">How to Use This Website</h3>
+    <ul>
+      <li id="useStudents">Use the Students Academic Zone to view academic performance and simulate dropout predictions.</li>
+      <li id="useAttendance">Use the Attendance Zone to monitor attendance and assess dropout risk.</li>
+      <li id="useCounsel">Click Counsel to auto-generate messages for guardians based on student risk level.</li>
+      <li id="useFilters">Use filters to view specific years or switch between prediction models.</li>
+    </ul>
+    <button onclick="readInstructions()" class="voice-button">🔊 Read Instructions</button>
+
+    <hr>
+    <h3 id="aboutTitle">About this System</h3>
+    <p>This AI-assisted Dropout Prediction System was built by the Institute of Management and Technology RSM to help students and staff proactively identify academic risks.</p>
+    <p>It analyzes attendance, internal marks, assignment completion, fee status, and last semester performance to compute a dropout risk score.</p>
+    <p>Teachers can send counseling messages to guardians, see visualizations, and simulate ML predictions on the client side.</p>
+    <p>This demo is for educational purposes and can be extended to use real ML backends and SMS gateways.</p>
+
+    <hr>
+    <h3 id="quickActions">Quick Actions</h3>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <button onclick="location.href='students.html'">Open Students Academic Zone</button>
+      <button onclick="location.href='attendance.html'">Open Attendance Zone</button>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      Institute of Management and Technology RSM<br>
+      24th VIP Jassore Road, Bidhannagar, Kolkata 700052
+    </div>
+    <div>Contact: 8976583431</div>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+    }
+
+    function readInstructions() {
+      const text = `
+        Welcome to the AI Dropout Prediction Dashboard.
+        Use the Students Academic Zone to view academic performance and simulate dropout predictions.
+        Use the Attendance Zone to monitor attendance and assess dropout risk.
+        Click Counsel to auto-generate messages for guardians based on student risk level.
+        Use filters to view specific years or switch between prediction models.
+      `;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'hi-IN';
+      speech.rate = 1;
+      speech.pitch = 1;
+      window.speechSynthesis.speak(speech);
+    }
+
+    function translatePage() {
+      const lang = document.getElementById("languageSelect").value;
+      if (lang === "rajasthani") {
+        document.getElementById("howToUseTitle").innerText = "ई वेबसाइट को केसर उपयोग करो";
+        document.getElementById("useStudents").innerText = "विद्यार्थी अकादमिक जोन में जावो, प्रदर्शन देखो और ड्रॉपआउट की भविष्यवाणी करो।";
+        document.getElementById("useAttendance").innerText = "हाजिरी जोन में जावो, हाजिरी देखो और ड्रॉपआउट खतरो जानो।";
+        document.getElementById("useCounsel").innerText = "काउंसल पर क्लिक करो, खतरे के आधार पर संदेश बनावो।";
+        document.getElementById("useFilters").innerText = "फिल्टर से साल चुनो या मॉडल बदलो।";
+        document.getElementById("aboutTitle").innerText = "ई सिस्टम के बारे में";
+        document.getElementById("quickActions").innerText = "तुरंत काम";
+        document.getElementById("title").innerText = "प्रबंधन और प्रौद्योगिकी संस्थान RSM";
+        document.getElementById("subtitle").innerText = "एआई ड्रॉपआउट पूर्वानुमान और परामर्श प्रणाली";
+      } else {
+        location.reload(); // reload to reset to English
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+:root {
+  --bg-color: #071833;
+  --text-color: #ffffff;
+  --container-bg: #ffffff;
+  --container-text: #071833;
+}
+
+body.light-mode {
+  --bg-color: #f0f8ff;
+  --text-color: #071833;
+  --container-bg: #ffffff;
+  --container-text: #071833;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #071833;
+  padding: 10px 20px;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+.navbar a:hover {
+  color: #ff4d4d;
+}
+.mode-toggle {
+  background: #00cfff;
+  color: #071833;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.mode-toggle:hover {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 20px 10px 20px;
+  text-align: center;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+}
+.institute-name h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+.institute-name p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Main container */
+.container {
+  background: var(--container-bg);
+  color: var(--container-text);
+  padding: 25px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  flex: 1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  color: var(--container-text);
+}
+th, td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+th {
+  background: #f5f5f5;
+}
+
+/* Badges */
+.safe {
+  background: #4CAF50;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+.warning {
+  background: #FFC107;
+  color: #000;
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+.highrisk {
+  background: #F44336;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+
+/* Buttons and inputs */
+input, select, button {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+button {
+  background: #071833;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #ff4d4d;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #071833;
+  padding: 18px 22px;
+  color: #fff;
+  border-top: 2px solid red;
+  margin-top: 40px;
+}
